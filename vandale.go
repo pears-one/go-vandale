@@ -24,6 +24,6 @@ func Search(word string, mode string) (SearchResult, error) {
 		return sr, err
 	}
 
-	sr.Entries, err = ParseSearchResults(node)
+	sr.Entries, err = parseSearchResults(node)
 	return sr, err
 }

@@ -1,16 +1,20 @@
 package vandale
 
 import (
+	"errors"
 	"fmt"
 	"strings"
 
 	"golang.org/x/net/html"
 )
 
-func ParseSearchResults(n *html.Node) ([]Entry, error) {
+func parseSearchResults(n *html.Node) ([]Entry, error) {
 	var f func(*html.Node) ([]Entry, error)
 	f = func(n *html.Node) ([]Entry, error) {
 		if isElement(n, "div", "snippets") {
+			if n.FirstChild == nil {
+				return nil, errors.New("no results found")
+			}
 			return parseEntries(n)
 		}
 		for c := n.FirstChild; c != nil; c = c.NextSibling {
