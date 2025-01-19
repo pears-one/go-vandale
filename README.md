@@ -7,7 +7,7 @@ The Van Dale Go Client is a Go package for interacting with the Van Dale diction
 To use the Van Dale Go Client in your project, you first need to install it by running:
 
 ```bash
-go get github.com/pears.one/go-vandale
+go get github.com/pears-one/go-vandale
 ```
 
 Ensure that your project is set up with Go Modules for dependency management.
@@ -21,7 +21,7 @@ package main
 
 import (
     "fmt"
-    "github.com/pears.one/go-vandale"
+    "github.com/pears-one/go-vandale"
 )
 
 func main() {

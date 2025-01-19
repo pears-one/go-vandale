@@ -1,4 +1,4 @@
-module github.com/pears.one/go-vandale
+module github.com/pears-one/go-vandale
 
 go 1.23.2
 
